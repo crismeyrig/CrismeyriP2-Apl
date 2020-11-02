@@ -10,7 +10,7 @@
 <StackPanel>
             <Menu Height="24" FontSize="15">
                 <MenuItem Header="Registros">
-                    <MenuItem x:Name="rproyectosMenuItem"  Header="Registrar Proyectos"/>
+                    <MenuItem x:Name="rproyectosMenuItem"  Header="Registrar "/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">

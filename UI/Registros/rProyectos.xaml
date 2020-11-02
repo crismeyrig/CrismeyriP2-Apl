@@ -6,46 +6,63 @@
         xmlns:local="clr-namespace:CrismeyriP2-Apl.UI.Registros"
         mc:Ignorable="d"
         Title="REGISTRO DE PROYECTOS" Height="520" Width="520"  Icon="/Resources/Agendar.png">
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Label Content="Proyecto Id" FontWeight="Bold" FontSize="16"/>
-            <!--ProyectoId-->
-            <StackPanel Orientation="Horizontal" Height="35">
-                <TextBox x:Name="ProyectoIdTextbox" Text="{Binding ProyectoId}" Width="230" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center"/>
-                 <!--Buscar-->
-                <Button x:Name="BuscarButton" Margin="50,0,0,0" Width="120" Click="BuscarButton_Click">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Imagenes/buscar.png" />
-                        <Label Content="Buscar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-                                       
+    <Grid >
+        <StackPanel Margin= "46,-40,0,0"  VerticalAlignment="Center" HorizontalAlignment="Left"  Width="500" Height="650">
+            
+            <!--Id-->
+            <Label Content = "Id" FontSize="15px" Margin="-390,125,1,1" FontFamily="SimSun-ExtB" FontStyle="Normal" Width="90"/>
+            <TextBox x:Name = "IdTextBox" Text ="{Binding Id}" Width="50" Height="25" Margin="-220,-25,0,0"/>
+
+            <!--Boton Buscar-->
+            <Button x:Name ="BuscarButton" Margin="210,-40,0,0" Width = "120" Height = "40" Content="     Buscar"  FontWeight="Bold"/>
+            <Image Source= "/Imagenes/buscar.png" Width="30" Height= "30" Margin="140,-40,0,0"/>
+
+            <StackPanel Orientation="Vertical" >
+                <GroupBox Header="Detalle"  Margin="0,5,0,0" >
+                    <StackPanel>
+                                                
+                        <StackPanel Orientation="Horizontal">
+                            <!--Agregar Fila-->                            
+                            <Button x:Name="AgregarFilaButton" Margin="10,10,0,0" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Imagenes/Agregar.png" Height="25"/>
+                                    <Label Content="Agregar fila" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Button>
+                            <!--Eliminar Fila-->
+                            <Button x:Name="EliminarFilaButton" Margin="220,10,0,0" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/Imagenes/Borrar.png" Height="25"/>
+                                    <Label Content="Eliminar fila" FontWeight="Bold"/>
+                                </StackPanel>
+                            </Button>
+                            
+                        </StackPanel>
+
+                        <DataGrid x:Name="DetalleDataGrid"  IsReadOnly="true" Height="100" AutoGenerateColumns="False" ItemsSource="{Binding Detalle}" Margin="0,10,0,0">
+                            <DataGrid.Columns>                                
+                                <DataGridTextColumn Header="        JugadorId     " Binding="{Binding JugadorId}"/>
+                                <DataGridTextColumn Header="        Nombre    " Binding="{Binding Nombre}"/>
+                                <DataGridTextColumn Header="        Posicion            " Binding="{Binding Posicion }"/>
+                                </DataGrid.Columns>
+                        </DataGrid>
                         
-            <!-- Botones-->
-            <StackPanel Orientation="Horizontal" Height="35" Margin="0,5,0,0" HorizontalAlignment="Center">
-                <Button x:Name="NuevoButton" Click="NuevoButton_Click" Width="120">
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="25" Source="/Imagenes/Nuevo.png"/>
-                        <Label Content="Nuevo" FontSize="17" FontWeight="Bold"/>
                     </StackPanel>
-                </Button>
-              
-                <Button x:Name="GuardarButton" Click="GuardarButton_Click" Width="120" Margin="20,0,0,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Imagenes/Guardar.png"/>
-                        <Label Content="Guardar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
-          
-                <Button x:Name="EliminarButton" Click="EliminarButton_Click" Width="120" Margin="20,0,0,0" >
-                    <StackPanel Orientation="Horizontal">
-                        <Image Height="30" Source="/Imagenes/Borrar.png"/>
-                        <Label Content="Eliminar" FontSize="17" FontWeight="Bold"/>
-                    </StackPanel>
-                </Button>
+                </GroupBox>               
             </StackPanel>
-         
+
+
+            <!-- Botones-->
+            <Button x:Name ="NuevoButton" Margin="-320,20,0,0" Width = "100" Height = "40" Content="        Nuevo"   FontWeight="Bold"/>
+            <Image Source= "/Imagenes/Nuevo.png" Width="40" Height= "40" Margin="-380,-40,0,0"/>
+
+            
+            <Button x:Name ="GuardarButton" Margin="-15,-40,0,0" Width = "100" Height = "40" Content="        Guardar"   FontWeight="Bold"/>
+            <Image Source= "/Imagenes/Guardar.jpg" Width="35" Height= "35" Margin="-75,-40,0,0"/>
+
+            
+            <Button x:Name ="EliminarButton" Margin="300,-40,0,0" Width = "100" Height = "40" Content="          Eliminar"   FontWeight="Bold"/>
+            <Image Source= "/Imagenes/Borrar.png" Width="40" Height= "40" Margin="240,-40,0,0"/>
         </StackPanel>
     </Grid>
 </Window>
