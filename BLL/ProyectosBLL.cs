@@ -11,7 +11,7 @@ namespace CrismeyriP2_Apl.BLL
 {
     public class ProyectosBLL
     {
-        //—————————————————————————————————————————————————————[ GUARDAR ]—————————————————————————————————————————————————————
+       // Guardar
         public static bool Guardar(Proyectos proyectos)
         {
             bool paso;
@@ -23,7 +23,7 @@ namespace CrismeyriP2_Apl.BLL
 
             return paso;
         }
-        //—————————————————————————————————————————————————————[ INSERTAR ]—————————————————————————————————————————————————————
+       // Insertar
         public static bool Insertar(Proyectos proyectos)
         {
             Contexto contexto = new Contexto();
@@ -50,7 +50,7 @@ namespace CrismeyriP2_Apl.BLL
 
             return paso;
         }
-        //—————————————————————————————————————————————————————[ MODIFICAR ]—————————————————————————————————————————————————————
+        // Modificar
         public static bool Modificar(Proyectos proyectos)
         {
             Contexto contexto = new Contexto();
@@ -79,7 +79,28 @@ namespace CrismeyriP2_Apl.BLL
 
             return paso;
         }
-        //—————————————————————————————————————————————————————[ ELIMINAR ]—————————————————————————————————————————————————————
+        // Existe
+        public static bool Existe(int id)
+        {
+            bool encontrado = false;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                encontrado = contexto.Proyectos.Any(p => p.ProyectoId == id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return encontrado;
+        }
+        // Eliminar
         public static bool Eliminar(int id)
         {
             bool paso = false;
@@ -104,50 +125,8 @@ namespace CrismeyriP2_Apl.BLL
 
             return paso;
         }
-        //—————————————————————————————————————————————————————[ GETLIST ]—————————————————————————————————————————————————————
-        public static List<Proyectos> GetList(Expression<Func<Proyectos, bool>> criterio)
-        {
-            List<Proyectos> lista = new List<Proyectos>();
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                lista = contexto.Proyectos.Where(criterio).ToList();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-
-            return lista;
-        }
-        //—————————————————————————————————————————————————————[ EXISTE ]—————————————————————————————————————————————————————
-        public static bool Existe(int id)
-        {
-            bool encontrado = false;
-            Contexto contexto = new Contexto();
-
-            try
-            {
-                encontrado = contexto.Proyectos.Any(p => p.ProyectoId == id);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                contexto.Dispose();
-            }
-
-            return encontrado;
-        }
-        //—————————————————————————————————————————————————————[ BUSCAR ]————————————————————————————————————————————————————
-        public static Proyectos Buscar(int id)
+        // Buscar
+              public static Proyectos Buscar(int id)
         {
             Proyectos proyectos = new Proyectos();
             Contexto contexto = new Contexto();
@@ -171,5 +150,27 @@ namespace CrismeyriP2_Apl.BLL
 
             return proyectos;
         }
+    
+        public static List<Proyectos> GetList(Expression<Func<Proyectos, bool>> criterio)
+        {
+            List<Proyectos> lista = new List<Proyectos>();
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                lista = contexto.Proyectos.Where(criterio).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+
+            return lista;
+        }
+         
     }
 }

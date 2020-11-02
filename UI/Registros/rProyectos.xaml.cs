@@ -30,7 +30,7 @@ namespace CrismeyriP2_Apl.UI.Registros
        
         }
         // cargar
-               private void Cargar()
+        private void Cargar()
         {
             this.DataContext = null;
             this.DataContext = proyectos;
@@ -74,7 +74,7 @@ namespace CrismeyriP2_Apl.UI.Registros
             }
         }
         // Agregar Fila
-                private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
+        private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
         {
             var filaDetalle = new ProyectosDetalle
             {
@@ -149,7 +149,7 @@ namespace CrismeyriP2_Apl.UI.Registros
             }
         }
         // Eliminar
-                private void EliminarButton_Click(object sender, RoutedEventArgs e)
+        private void EliminarButton_Click(object sender, RoutedEventArgs e)
         {
             {
                 if (ProyectosBLL.Eliminar(Utilidades.ToInt(ProyectoIdTextbox.Text)))
