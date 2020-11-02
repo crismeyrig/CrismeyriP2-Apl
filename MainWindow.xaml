@@ -10,16 +10,13 @@
 <StackPanel>
             <Menu Height="24" FontSize="15">
                 <MenuItem Header="Registros">
-                    <MenuItem x:Name="rproyectosMenuItem"  Header="Registrar "/>
+                    <MenuItem x:Name="rproyectosMenuItem" Click="rProyectosMenuItem_Click" Header="Registrar "/>
                 </MenuItem>
 
                 <MenuItem Header="Consultas">
-                    <MenuItem x:Name="cProyectosMenuItem"  Header="Consultar "/>
+                    <MenuItem x:Name="cConsultasMenuItem" Click="cConsultasMenuItem_Click" Header="Consultar "/>
                 </MenuItem>
 
-                <MenuItem Header="Ayuda">
-                    <Menu/>
-                </MenuItem>
             </Menu>
         </StackPanel>
     </Grid>

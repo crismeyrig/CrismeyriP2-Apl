@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CrismeyriP2_Apl.UI.Registros;
+using CrismeyriP2_Apl.UI.Consultas;
 
 namespace CrismeyriP2_Apl
 {
@@ -26,14 +28,14 @@ namespace CrismeyriP2_Apl
         }
          private void rProyectosMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            //rProyectos rProyectos = new rProyectos();
-           // rProyectos.Show();
+            rProyectos rProyectos = new rProyectos();
+           rProyectos.Show();
         }
 
-        private void cProyectosMenuItem_Click(object sender, RoutedEventArgs e)
+        private void ctareasMenuItem_Click(object sender, RoutedEventArgs e)
         {
-           // cProyectos cProyectos = new cProyectos();
-           // cProyectos.Show(); 
+           cTareas cTareas = new cTareas();
+           cTareas.Show(); 
         }
     }
 }
