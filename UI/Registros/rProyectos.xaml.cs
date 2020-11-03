@@ -99,11 +99,13 @@ namespace CrismeyriP2_Apl.UI.Registros
         {
             try
             {
+                var detalle = (ProyectosDetalle)DetalleDataGrid.SelectedItem;
                 double total = Convert.ToDouble(TiempoTotalTextBox.Text);
                 if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
                 {
+                   proyectos.TiempoTotal = proyectos.TiempoTotal - detalle.Tiempo;
                     proyectos.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
-                    proyectos.TiempoTotal -= total;
+                    //proyectos.TiempoTotal -= total;
                     Cargar();
                 }
             }
