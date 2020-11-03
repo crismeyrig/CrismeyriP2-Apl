@@ -47,7 +47,7 @@
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal">
-                                <!--Sgregar Fila-->
+                                <!--Agregar Fila-->
                                 <Button x:Name="AgregarFilaButton" Click="AgregarFilaButton_Click" Height="30">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="/Imagenes/Agregar.png" Height="25"/>
@@ -70,8 +70,8 @@
                             <!--Remover Fila-->
                             <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="175">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/Eliminar.png" Height="25"/>
-                                    <Label Content="Remover fila seleccionada"/>
+                                    <Image Source="/Imagenes/Remover.png" Height="25"/>
+                                    <Label Content="Remover fila"/>
                                 </StackPanel>
                             </Button>
                             <!--Tiempo Total-->

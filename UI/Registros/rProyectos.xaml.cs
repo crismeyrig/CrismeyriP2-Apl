@@ -142,10 +142,10 @@ namespace CrismeyriP2_Apl.UI.Registros
                 if (paso)
                 {
                     Limpiar();
-                    MessageBox.Show("Transaccion Exitosa", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Guardado Correctamente", "Guardado", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                    MessageBox.Show("Transaccion Fallida", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("No fue posible guadar", "verifica e intenta de nuevo", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
         // Eliminar
@@ -155,10 +155,10 @@ namespace CrismeyriP2_Apl.UI.Registros
                 if (ProyectosBLL.Eliminar(Utilidades.ToInt(ProyectoIdTextbox.Text)))
                 {
                     Limpiar();
-                    MessageBox.Show("Registro Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Registro Eliminado", "Eliminado", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else
-                    MessageBox.Show("No se pudo eliminar el registro", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("No se pudo eliminar el registro,Verifique que exista", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         // Tiempo

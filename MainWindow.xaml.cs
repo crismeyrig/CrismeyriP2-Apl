@@ -29,10 +29,10 @@ namespace CrismeyriP2_Apl
          private void rProyectosMenuItem_Click(object sender, RoutedEventArgs e)
         {
             rProyectos rProyectos = new rProyectos();
-           rProyectos.Show();
+            rProyectos.Show();
         }
 
-        private void ctareasMenuItem_Click(object sender, RoutedEventArgs e)
+        private void cTareasMenuItem_Click(object sender, RoutedEventArgs e)
         {
            cTareas cTareas = new cTareas();
            cTareas.Show(); 

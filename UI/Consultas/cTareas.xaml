@@ -5,25 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrismeyriP2_Apl.UI.Consultas"
         mc:Ignorable="d"
-        Title="CONSULTAR" Height="460" Width="640" WindowStartupLocation="CenterScreen" Icon="/Resources/Lista.png">
-    <Grid>
+        Title="CONSULTAR" Height="460" Width="640" WindowStartupLocation="CenterScreen">
+   <Grid>
         <StackPanel Orientation="Vertical" Margin="0,5,0,0" HorizontalAlignment="Center">
 
-                 <StackPanel Orientation="Horizontal" Height="58">
-                <StackPanel Margin="5,0">
+            <StackPanel Orientation="Horizontal" Height="60">
+                
+
+                <StackPanel Margin="0,0,20,0" >
                     <Label Content="Filtro:" />
                     <ComboBox x:Name="FiltroComboBox" Width="95" Height="24" >
-                        <ComboBoxItem Content="Todo"/>
+                        <ComboBoxItem Content="Id"/>
+                        <ComboBoxItem Content="Descripción"/>
                     </ComboBox>
                 </StackPanel>
 
-                <StackPanel Margin="5,0">
+                <StackPanel>
                     <Label Content="Critero:"/>
                     <TextBox x:Name="CriterioTextBox" Width="95" Height="24" Margin="0,0,5,0"/>
 
                 </StackPanel>
 
-                <Button x:Name="BuscarButton" Height="30" Width="90" Click="ConsultarButton_Click" >
+                <Button x:Name="BuscarButton" Height="30" Width="100" Click="ConsultarButton_Click" Margin="30,0,0,0" >
                     <StackPanel Orientation="Horizontal" >
                         <Image Source="/Imagenes/buscar.png" Width="25"  />
                         <Label Content="Consultar" />
@@ -32,7 +35,15 @@
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Left" >
-                <DataGrid x:Name="DatosDataGrid" Height="350" Width="605" AutoGenerateColumns="False" IsReadOnly="True"/>
+                <DataGrid x:Name="DatosDataGrid" IsReadOnly="True" AutoGenerateColumns="False" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center" Height="350" Width="605">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Proyecto Id" Binding="{Binding ProyectoId}"/>
+                        <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha, StringFormat='dd/MM/yyyy'}"/>
+                        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
+                        <DataGridTextColumn Header="Tiempo Total" Binding="{Binding TiempoTotal}"/>
+                        <DataGridTextColumn Header="Detalle" Binding="{Binding Detalle}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </StackPanel>
         </StackPanel>
     </Grid>
